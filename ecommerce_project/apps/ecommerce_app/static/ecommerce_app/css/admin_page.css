@@ -1,0 +1,97 @@
+/* *{
+    outline: 1px solid pink;
+} */
+
+
+.maincontent{
+    margin: 20px 400px;
+    height: 100%;
+}
+
+.subcontent{
+    text-align: left;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.navinfo{
+    display: inline-block;
+    width: 20%;
+}
+
+.vertnav{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-btn{
+    text-decoration: none;
+}
+
+.vertnav-item{
+    padding: 15px;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.admininfo{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    margin-left: 60px;
+}
+
+.prodform{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    padding: 25px;
+    width: 70%;
+}
+
+.title{
+    font-size: 25pt;
+    font-weight: lighter;
+    border-bottom: 1px solid #ddd;
+}
+
+.subtitle{
+    margin-bottom: 20px;
+}
+
+/* .main{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    display: inline-block;
+    padding: 25px;
+    margin-top: 65px;
+    width: 30%;
+} */
+
+.maincontent{
+    margin: 20px 400px;
+    height: 100%;
+}
+
+label{
+    font-weight: bold;
+    font-size: 9.5pt;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.row{
+    margin-top: 10px;
+}
+
+.col{
+    height: 40px;
+}
+
+.btn{
+    margin-top: 10px;
+}

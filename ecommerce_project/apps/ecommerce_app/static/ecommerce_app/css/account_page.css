@@ -1,0 +1,103 @@
+/* *{
+    outline: 1px solid pink;
+} */
+
+.maincontent{
+    margin: 20px 400px;
+    height: 100%;
+}
+
+/* .navbar{
+    width: 30%;
+} */
+
+.vertnav{
+    list-style: none;
+    padding: 0;
+    /* border-right: 1px solid #ddd; */
+    text-align: center;
+}
+
+.vertnav-item{
+    /* width: 10%; */
+    padding: 15px;
+    border: 1px solid #e9e9e9;
+    color: black;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    /* background: linear-gradient(0deg, #ffffff 0%, #e9e9e9 50%, #ffffff 100%) */
+}
+
+.nav-btn{
+    text-decoration: none;
+}
+
+.title{
+    font-size: 25pt;
+    font-weight: lighter;
+    border-bottom: 1px solid #ddd;
+}
+
+.navinfo{
+    display: inline-block;
+    width: 20%;
+
+}
+
+.subcontent{
+    /* border: 1px solid #ddd; */
+    /* border-radius: 5px; */
+    text-align: left;
+    /* display: inline-block; */
+    /* padding: 25px; */
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+.userinfo{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    margin-left: 20px;
+    /* border: 1px solid #ddd; */
+}
+
+.subtitle{
+    margin-bottom: 20px;
+}
+
+.editbtn{
+    border: 0.5px solid #a2a6ab;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black !important;
+    padding: 5px 15px;
+    background: linear-gradient(0deg, #e6e9ec 0%, #edf0f2 50%, #fcfcfd 100%);
+    font-weight: lighter;
+    font-size: 10pt;
+}
+
+.editinfo{
+    font-size: 10.5pt;
+}
+
+.editform{
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.editsubmit{
+    border: 0.5px solid #a2a6ab;
+    border-radius: 5px;
+    color: black;
+    padding: 5px 15px;
+    font-size: 10.5pt;
+    margin-top: 10px;
+    background: linear-gradient(0deg, #f0c14c 0%, #f7dea0 100%);
+}

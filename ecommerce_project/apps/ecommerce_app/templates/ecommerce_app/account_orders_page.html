@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <!-- Scripts/Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src = "{% static 'ecommerce_app/js/index_script.js' %}"></script>
+    <script src = "{% static 'ecommerce_app/js/account_page_script.js' %}"></script>
+    <!-- Stylesheets/Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'ecommerce_app/css/account_page.css' %}">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'ecommerce_app/css/app.css' %}">
+    <title>Account Info</title>
+</head>
+<body>
+    
+    <div id = "navbar" class = "navbar navbar-expand-lg">
+        
+        <div class = "collapse navbar-collapse navleft">
+            <a class = "navbar-brand navitem" href = "/">Home</a>
+            <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
+                <li class = "nav-item dropdown">
+                    <a class = "nav-link dropdown-toggle dropbtnMen navitem" href = "#">Men</a>
+                    <ul class = "dropdown-menu dropdown-content" id = "myDropdownMens">
+                        <li><a class = "dropdown-item" href = "#">Tops</a></li>
+                        <li><hr class = "dropdown-divider"></li>
+                        <li><a class = "dropdown-item" href = "#">Bottoms</a></li>
+                        <li><hr class = "dropdown-divider"></li>
+                        <li><a class = "dropdown-item" href = "#">Outer wear</a></li>
+                    </ul>
+                </li>
+                <li class = "nav-item dropdown">
+                    <a class = "nav-link dropdown-toggle dropbtnWomen navitem" href = "#">Women</a>
+                    <ul class = "dropdown-menu dropdown-content" id = "myDropdownWomens">
+                        <li><a class = "dropdown-item" href = "#">Tops</a></li>
+                        <li><hr class = "dropdown-divider"></li>
+                        <li><a class = "dropdown-item" href = "#">Bottoms</a></li>
+                        <li><hr class = "dropdown-divider"></li>
+                        <li><a class = "dropdown-item" href = "#">Outer wear</a></li>
+                    </ul>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link navitem" href = "#">Other</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <form class = "searchbar" method = "post" action = "/search">
+            {% csrf_token %}
+            <input type = "text" class = "searchfield" placeholder = "Search for anything">
+            <button type = "submit" class = "searchbtn"><img class = "searchimg" src="{% static 'ecommerce_app/images/magnifying_glass.png' %}"></button>
+        </form>
+
+
+        <div class = "loginlink collapse navbar-collapse">
+            <a class = "nav-link navitem" href = "#">My Cart</a>
+            {% if request.session.user_id %}
+            <ul class = "navbar-nav me-auto mb-2 mb-lg-0">
+                <li class = "nav-item dropdown">
+                    <a class = "nav-link dropdown-toggle dropbtnUser navitem" href = "/account/{{ user_info.id }}/info">Hello, {{ user_info.first_name }}</a>
+                    <ul class = "dropdown-menu dropdown-content" id = "myDropdownUsers">
+                        <li><a class = "dropdown-item" href = "/account/{{ user_info.id }}/info">Account</a></li>
+                        <li><a class = "dropdown-item" href = "/account/{{ user_info.id }}/orders">Orders</a></li>
+                        <li><a class = "dropdown-item" href = "/logout">Log out</a></li>
+                        {% if user_info.level == 0 %}
+                        <li><a class = "dropdown-item" href = "/admin/product">Admin page</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+            {% endif %}
+            {% if not request.session.user_id %}
+            <a class = "nav-link navitem" href = "/login">Sign in</a>
+            {% endif %}
+        </div>
+        
+    </div>
+
+    <div class = "middle">
+        <div class = "maincontent">
+            <h1 class = "title">Account Information</h1>
+            <div class = "subcontent">
+                <div class = "navinfo">
+                    <ul class = "vertnav">
+                        <a class = "nav-btn" href = "/account/{{ user_info.id }}/info"><li class = "vertnav-item">Login & Security</li></a>
+                        <a class = "nav-btn" href = "/account/{{ user_info.id }}/orders"><li class = "vertnav-item">Your Orders</li></a>
+                        <a class = "nav-btn" href = "#"><li class = "vertnav-item">Contact us</li></a>
+                    </ul>
+                </div>
+                <div class = "userinfo">
+                    <h4 class = "subtitle">Orders</h4>
+                    <table class = "table infotable">
+                        <tbody>
+                            <tr>
+                                <th scope = "row">Name</th>
+                                <td>{{ user_info.first_name }} {{ user_info.last_name }}</td>
+                                <td><a class = "editbtn" href = "#">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <th scope = "row">Email address</th>
+                                <td>{{ user_info.email }}</td>
+                                <td><a class = "editbtn" href = "#">Edit</a></td>
+                            </tr>
+                            <tr>
+                                <th scope = "row">Password</th>
+                                <td>********</td>
+                                <td><a class = "editbtn" href = "#">Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "footer">
+
+    </div>
+</body>
+</html>

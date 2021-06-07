@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.main{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    display: inline-block;
+    padding: 25px;
+    width: 30%;
+    margin-top: 15px;
+}
